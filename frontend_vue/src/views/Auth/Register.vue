@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import { useAuthStore } from "@/stores/auth";
 
 const authStore = useAuthStore();
@@ -11,6 +11,10 @@ const formData = reactive({
 	email: "",
 	password: "",
 	password_confirmation: "",
+});
+
+onMounted(() => {
+	authStore.errors = {}; // clear errors on mount
 });
 </script>
 <template>
