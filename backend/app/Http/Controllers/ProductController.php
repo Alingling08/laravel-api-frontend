@@ -22,7 +22,7 @@ class ProductController extends Controller implements HasMiddleware
      */
     public function index()
     {
-        return Product::all();
+        return Product::with('user')->latest()->get();
     }
 
     /**
@@ -34,17 +34,18 @@ class ProductController extends Controller implements HasMiddleware
         $validatedData = $request->validate([
             'name' => 'required|string|max:255|min:3',
             'description' => 'required|string',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:1',
             'sku' => 'required|string|max:50|unique:products',
+            'brand' => 'required|string',
             // 'image' => 'required|file|max:1000|mimes:jpg,bmp,png,webp',
             'category' => 'required|string|max:50',
-            'stock' => 'required|numeric|min:0',
+            'stock' => 'required|numeric|min:1',
             // 'feature_id' => 'required|exists:features,id'
         ]);
 
         $product = $request->user()->products()->create($validatedData);
 
-        return ['product' => $product, 'message' => 'Product created successfully'];
+        return ['product' => $product, 'user' => $product->user, 'message' => 'Product created successfully'];
     }
 
     /**
@@ -52,7 +53,7 @@ class ProductController extends Controller implements HasMiddleware
      */
     public function show(Product $product)
     {
-        return $product;
+        return ['product' => $product, 'user' => $product->user];
     }
 
     /**
