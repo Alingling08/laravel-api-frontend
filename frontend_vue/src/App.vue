@@ -1,6 +1,7 @@
 <script setup>
 import { useAuthStore } from "@/stores/auth";
 import { onMounted } from "vue";
+import logo from "@/assets/images/scorpiohub-logo.png";
 
 const authStore = useAuthStore();
 
@@ -12,8 +13,8 @@ onMounted(async () => {
 <template>
 	<nav class="bg-white dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
 		<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-			<a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-				<img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+			<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+				<img :src="logo" class="h-8" alt="scorpiohub Logo" />
 				<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Scorpio Hub</span>
 			</a>
 
@@ -34,12 +35,12 @@ onMounted(async () => {
 						aria-expanded="false"
 						data-dropdown-toggle="dropdown">
 						<span class="sr-only">Open user menu</span>
-						<img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo" />
+						<img class="w-8 h-8 rounded-full" src="https://scorpiohub.com/docs/images/people/profile-picture-5.jpg" alt="user photo" />
 					</button>
 					<div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown">
 						<div class="py-3 px-4">
-							<span class="block text-sm font-semibold text-gray-900 dark:text-white">Neil sims</span>
-							<span class="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+							<span class="block text-sm font-semibold text-gray-900 dark:text-white">Scorpio Hub</span>
+							<span class="block text-sm text-gray-500 truncate dark:text-gray-400">name@scorpiohub.com</span>
 						</div>
 						<ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
 							<li>
@@ -163,7 +164,7 @@ onMounted(async () => {
 
 	<footer class="bg-white rounded-lg shadow-sm dark:bg-gray-800 bottom-0 fixed w-full">
 		<div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-			<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://flowbite.com/" class="hover:underline">Scorpio Hub</a>. All Rights Reserved. </span>
+			<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://scorpiohub.com/" class="hover:underline">Scorpio Hub</a>. All Rights Reserved. </span>
 			<ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
 				<li>
 					<a href="#" class="hover:underline me-4 md:me-6">About</a>
