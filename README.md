@@ -24,3 +24,8 @@ The laravel-api-frontend repository is a project that demonstrates the integrati
 
 <h3>Usage</h3>
 <p>Once both servers are running, you can access the application by navigating to the frontend URL in your browser. The Vue.js frontend will interact with the Laravel API backend to fetch and display data.</p>
+
+<h2>Images</h2>
+
+**Product List**<br>
+![image](https://github.com/user-attachments/assets/3c28ec60-8cb5-4f83-87de-29d2b4cb4e3e)
